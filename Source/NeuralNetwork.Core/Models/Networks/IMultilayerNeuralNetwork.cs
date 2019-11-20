@@ -1,12 +1,10 @@
 ﻿using System;
+using NeuralNetwork.Core.Models.Layers;
 
-namespace NeuralNetwork.Core.Models
+namespace NeuralNetwork.Core.Models.Networks
 {
     public interface IMultilayerNeuralNetwork : INeuralNetwork
     {
-        /// <summary>
-        /// Get array of layers of network
-        /// </summary>
         ILayer[] Layers { get; }
     }
 }

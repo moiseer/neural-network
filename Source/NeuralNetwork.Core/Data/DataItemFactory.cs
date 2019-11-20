@@ -5,7 +5,7 @@ namespace NeuralNetwork.Core.Data
 {
     public class DataItemFactory
     {
-        public static List<DataItem> GetNumericData()
+        public static DataItem GetNumericData()
         {
             var oneInputData = new double[]
             {
@@ -19,9 +19,8 @@ namespace NeuralNetwork.Core.Data
             };
             var oneOutputData = new double[]
             {
-                0, 0, 0, 1
+                0, 1, 0, 0, 0, 0, 0, 0, 0, 0
             };
-            var one = new DataItem(oneInputData, oneOutputData);
             
             var twoInputData = new double[]
             {
@@ -35,9 +34,8 @@ namespace NeuralNetwork.Core.Data
             };
             var twoOutputData = new double[]
             {
-                0, 0, 1, 0
+                0, 0, 1, 0, 0, 0, 0, 0, 0, 0
             };
-            var two = new DataItem(twoInputData, twoOutputData);
             
             var threeInputData = new double[]
             {
@@ -51,9 +49,8 @@ namespace NeuralNetwork.Core.Data
             };
             var threeOutputData = new double[]
             {
-                0, 0, 1, 1
+                0, 0, 0, 1, 0, 0, 0, 0, 0, 0
             };
-            var three = new DataItem(threeInputData, threeOutputData);
             
             var fourInputData = new double[]
             {
@@ -67,9 +64,8 @@ namespace NeuralNetwork.Core.Data
             };
             var fourOutputData = new double[]
             {
-                0,1,0,0
+                0, 0, 0, 0, 1, 0, 0, 0, 0, 0
             };
-            var four = new DataItem(fourInputData, fourOutputData);
 
             var fiveInputData = new double[]
             {
@@ -83,9 +79,8 @@ namespace NeuralNetwork.Core.Data
             };
             var fiveOutputData = new double[]
             {
-                0, 1, 0, 1
+                0, 0, 0, 0, 0, 1, 0, 0, 0, 0
             };
-            var five = new DataItem(fiveInputData, fiveOutputData);
             
             var sixInputData = new double[]
             {
@@ -99,9 +94,8 @@ namespace NeuralNetwork.Core.Data
             };
             var sixOutputData = new double[]
             {
-                0, 1, 1, 0
+                0, 0, 0, 0, 0, 0, 1, 0, 0, 0
             };
-            var six = new DataItem(sixInputData, sixOutputData);
             
             var sevenInputData = new double[]
             {
@@ -115,9 +109,8 @@ namespace NeuralNetwork.Core.Data
             };
             var sevenOutputData = new double[]
             {
-                0, 1, 1, 1
+                0, 0, 0, 0, 0, 0, 0, 1, 0, 0
             };
-            var seven = new DataItem(sevenInputData, sevenOutputData);
             
             var eightInputData = new double[]
             {
@@ -131,9 +124,8 @@ namespace NeuralNetwork.Core.Data
             };
             var eightOutputData = new double[]
             {
-                1, 0, 0, 0
+                0, 0, 0, 0, 0, 0, 0, 0, 1, 0
             };
-            var eight = new DataItem(eightInputData, eightOutputData);
             
             var nineInputData = new double[]
             {
@@ -147,9 +139,8 @@ namespace NeuralNetwork.Core.Data
             };
             var nineOutputData = new double[]
             {
-                1, 0, 0, 1
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 1
             };
-            var nine = new DataItem(nineInputData, nineOutputData);
             
             var zeroInputData = new double[]
             {
@@ -163,16 +154,25 @@ namespace NeuralNetwork.Core.Data
             };
             var zeroOutputData = new double[]
             {
-                0, 0, 0, 0
+                1, 0, 0, 0, 0, 0, 0, 0, 0, 0
             };
-            var zero = new DataItem(zeroInputData, zeroOutputData);
 
-            var data = new List<DataItem>
+
+
+            double[][] input = new[]
             {
-                zero, one, two, three, four,
-                five, six, seven, eight, nine
+                zeroInputData, oneInputData, twoInputData, threeInputData, fourInputData,
+                fiveInputData, sixInputData, sevenInputData, eightInputData, nineInputData
             };
 
+            double[][] output = new[]
+            {
+                zeroOutputData, oneOutputData, twoOutputData, threeOutputData, fourOutputData,
+                fiveOutputData, sixOutputData, sevenOutputData, eightOutputData, nineOutputData
+            };
+            
+            var data=new DataItem(input, output);
+            
             return data;
         }
     }
