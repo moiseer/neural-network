@@ -40,7 +40,7 @@ namespace NeuralNetwork.Core.LearningStrategies
             thresholdsUpdates = new double[network.Layers.Length][];
 
             // инициализировать ошибки и массивы дельт для каждого слоя
-            for (int i = 0, n = network.Layers.Length; i < n; i++)
+            for (int i = 0; i < network.Layers.Length; i++)
             {
                 ILayer layer = network.Layers[i];
 
